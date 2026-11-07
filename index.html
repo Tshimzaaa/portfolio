@@ -218,7 +218,7 @@ nav {
 }
 
 .avatar-initials-text {
-  font-size: 11px;
+  font-size: 12px;
   color: #8a8a8a;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -339,7 +339,7 @@ section {
 }
 
 .step-num {
-  font-size: 11px;
+  font-size: 12px;
   color: #8a8a8a;
   font-weight: 500;
   background: #1a1a1a;
@@ -449,7 +449,7 @@ section {
 }
 
 .project-number {
-  font-size: 11px;
+  font-size: 12px;
   color: #8a8a8a;
   margin-bottom: 12px;
   letter-spacing: 0.05em;
@@ -582,6 +582,38 @@ section {
   border-color: #333;
 }
 
+/* ── EXPERIENCE ── */
+#experience {
+  background: #0a0a0a;
+  border-top: 1px solid #161616;
+}
+
+.exp-meta {
+  font-size: 12px;
+  color: #8a8a8a;
+  margin-bottom: 16px;
+}
+
+.exp-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.exp-list li {
+  font-size: 13px;
+  color: #9a9a9a;
+  line-height: 1.75;
+  padding-left: 16px;
+  position: relative;
+}
+
+.exp-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #555;
+}
+
 /* ── FOOTER ── */
 footer {
   padding: 24px 48px;
@@ -629,6 +661,7 @@ footer span {
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
   </div>
 
@@ -649,7 +682,7 @@ footer span {
       Download CV
     </a>
     <div class="hero-socials">
-      <a href="https://linkedin.com/in/tshimollo-chiloane" class="social-icon" title="LinkedIn" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/in/tshimollo-chiloane-3b3371349" class="social-icon" title="LinkedIn" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       </a>
       <a href="https://github.com/Tshimzaaa" class="social-icon" title="GitHub" target="_blank" rel="noopener">
@@ -679,8 +712,8 @@ footer span {
       <h3>Data Analysis &amp; Reporting</h3>
       <p>Clean, structured analysis of datasets to surface trends, anomalies, and actionable insights for business decisions.</p>
       <div class="service-tags">
-        <div class="service-tag">Python &amp; Pandas</div>
-        <div class="service-tag">Excel &amp; SQL</div>
+        <div class="service-tag">Excel: PivotTables, XLOOKUP &amp; dashboards</div>
+        <div class="service-tag">Python, Pandas &amp; SQL</div>
       </div>
     </div>
 
@@ -694,11 +727,11 @@ footer span {
     </div>
 
     <div class="service-card">
-      <h3>Database Design &amp; SQL</h3>
-      <p>Designing efficient schemas, writing optimised queries, and managing structured data for analytics and reporting.</p>
+      <h3>IT Support &amp; Data Administration</h3>
+      <p>Paid freelance IT support since 2023: hardware upgrades, troubleshooting, data recovery, plus accurate data entry and record keeping.</p>
       <div class="service-tags">
-        <div class="service-tag">Schema design</div>
-        <div class="service-tag">Query optimisation</div>
+        <div class="service-tag">PC &amp; laptop upgrades</div>
+        <div class="service-tag">Data entry &amp; verification</div>
       </div>
     </div>
 
@@ -719,10 +752,10 @@ footer span {
     <h2>About Me</h2>
   </div>
   <p class="about-desc">
-    I'm a data professional based in Germiston, Gauteng, passionate about the full data lifecycle — 
-    from ingestion and transformation through to analytics and storytelling. I hold certifications from 
-    Harvard, Cisco, Deloitte, and FNB, and I'm actively building toward data engineering and remote 
-    data roles, combining analytical rigour with modern engineering practices.
+    I'm a detail-oriented matric graduate based in Germiston, Gauteng, with paid freelance IT support
+    experience since 2023 and independent projects in data analysis, digital administration and software
+    development. I hold certifications from Harvard, Cisco, Deloitte and FNB, speak English, Sepedi and
+    isiZulu, and I'm building toward data analyst and data engineering roles. Available immediately in Johannesburg.
   </p>
 
   <p class="approach-label">My Approach</p>
@@ -747,8 +780,8 @@ footer span {
       <div class="stat-label">Certifications</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">5+</div>
-      <div class="stat-label">Projects Completed</div>
+      <div class="stat-num">2023</div>
+      <div class="stat-label">Freelancing Since</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">3</div>
@@ -770,17 +803,21 @@ footer span {
       <div class="skill-tags">
         <span class="skill-tag">Python</span>
         <span class="skill-tag">SQL</span>
+        <span class="skill-tag">PostgreSQL</span>
         <span class="skill-tag">JavaScript</span>
         <span class="skill-tag">Bash</span>
       </div>
     </div>
 
     <div class="skill-card">
-      <h3>Analytics</h3>
+      <h3>Analytics &amp; Excel</h3>
       <div class="skill-tags">
-        <span class="skill-tag">Data Analysis</span>
+        <span class="skill-tag">PivotTables</span>
+        <span class="skill-tag">VLOOKUP/XLOOKUP</span>
+        <span class="skill-tag">SUMIF/COUNTIF</span>
+        <span class="skill-tag">Dashboards</span>
+        <span class="skill-tag">Google Sheets</span>
         <span class="skill-tag">Pandas</span>
-        <span class="skill-tag">Excel</span>
         <span class="skill-tag">Data Cleaning</span>
         <span class="skill-tag">EDA</span>
       </div>
@@ -805,9 +842,48 @@ footer span {
         <span class="skill-tag">React</span>
         <span class="skill-tag">HTML/CSS</span>
         <span class="skill-tag">UX Design</span>
-        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Git &amp; GitHub</span>
         <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">Microsoft Word</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <h2>Experience &amp; Education</h2>
+    <p>Hands-on work and formal schooling</p>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-number">2023 — PRESENT</div>
+      <h3>Freelance IT Support Technician</h3>
+      <p class="exp-meta">Self-employed · Johannesburg</p>
+      <ul class="exp-list">
+        <li>Provide paid IT support to individual clients, resolving PC and laptop hardware and software issues.</li>
+        <li>Upgrade PCs and laptops and replace broken or faulty hardware.</li>
+        <li>Install and configure software, set up devices and troubleshoot software problems.</li>
+        <li>Help device owners recover data and regain authorised access to their accounts.</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-tag">Windows</span>
+        <span class="tech-tag">Linux</span>
+        <span class="tech-tag">Hardware</span>
+        <span class="tech-tag">Data Recovery</span>
+        <span class="tech-tag">Basic Networking</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-number">DECEMBER 2024</div>
+      <h3>National Senior Certificate (Matric)</h3>
+      <p class="exp-meta">Afrikaanse Hoërskool Germiston · Germiston</p>
+      <ul class="exp-list">
+        <li>Completed matric and moved straight into self-taught programming, data analytics and certified short courses.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -932,7 +1008,7 @@ footer span {
     <div class="cert-card">
       <span class="cert-index">04</span>
       <div class="cert-info">
-        <h4>App Academy 2025 — JavaScript, React &amp; UX Design</h4>
+        <h4>App Academy 2025 — JavaScript, CSS &amp; UX Design</h4>
         <span>FNB (FirstRand Bank)</span>
       </div>
     </div>
@@ -943,7 +1019,7 @@ footer span {
 <section id="contact">
   <div class="section-header">
     <h2>Get In Touch</h2>
-    <p>Open to data engineering learnerships, analyst roles, and remote opportunities</p>
+    <p>Available immediately for data analyst roles, data engineering learnerships and remote opportunities</p>
   </div>
   <a href="mailto:tshimollochiloane02@gmail.com" class="contact-email">
     tshimollochiloane02@gmail.com
@@ -958,7 +1034,7 @@ footer span {
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.18 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
       Call Me
     </a>
-    <a href="https://linkedin.com/in/tshimollo-chiloane" class="contact-btn" target="_blank" rel="noopener">
+    <a href="https://www.linkedin.com/in/tshimollo-chiloane-3b3371349" class="contact-btn" target="_blank" rel="noopener">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       LinkedIn
     </a>
