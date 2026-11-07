@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tshimollo Chiloane — Data Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0a0a0a;
+}
+
+.nav-logo {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 100px;
+  padding: 6px 8px;
+}
+
+.nav-pill a {
+  font-size: 13px;
+  font-weight: 400;
+  color: #888;
+  text-decoration: none;
+  padding: 6px 16px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nav-pill a:hover, .nav-pill a.active {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.nav-cta {
+  background: #fff;
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 22px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: #e0e0e0; }
+
+/* ── HERO ── */
+#hero {
+  padding: 48px 48px 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  max-width: 520px;
+  padding-top: 20px;
+}
+
+.hero-intro {
+  font-size: 15px;
+  color: #aaa;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.hero-name {
+  font-size: clamp(44px, 6vw, 68px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.75;
+  max-width: 400px;
+  margin-bottom: 36px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-bottom: 36px;
+  transition: background 0.2s;
+}
+
+.hero-btn:hover { background: #e0e0e0; }
+
+.hero-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 36px; height: 36px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: #888;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.social-icon:hover { background: #1e1e1e; color: #fff; border-color: #333; }
+
+.social-icon svg { width: 16px; height: 16px; }
+
+.hero-right {
+  position: relative;
+  width: 340px;
+  height: 420px;
+  flex-shrink: 0;
+}
+
+.hero-photo-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-photo-bg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 380px;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(180deg, #1a1a1a 0%, #111 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Avatar placeholder — replace with an <img> tag if you have a photo */
+.hero-avatar-placeholder {
+  width: 200px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  gap: 8px;
+}
+
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.avatar-initials-text {
+  font-size: 11px;
+  color: #8a8a8a;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ── SECTION SHARED ── */
+section {
+  padding: 80px 48px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  font-size: 13px;
+  color: #8a8a8a;
+}
+
+/* ── SERVICES / WHAT I DO ── */
+#services {
+  background: #0a0a0a;
+  border-top: 1px solid #161616;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.service-card {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: border-color 0.2s;
+}
+
+.service-card:hover { border-color: #333; }
+
+.service-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.service-card p {
+  font-size: 13px;
+  color: #9a9a9a;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.service-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-tag {
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ── ABOUT ── */
+#about {
+  background: #0a0a0a;
+  border-top: 1px solid #161616;
+}
+
+.about-desc {
+  font-size: 14px;
+  color: #9a9a9a;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+  line-height: 1.8;
+}
+
+.approach-label {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.approach-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 56px;
+}
+
+.approach-step {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.step-num {
+  font-size: 11px;
+  color: #8a8a8a;
+  font-weight: 500;
+  background: #1a1a1a;
+  border: 1px solid #252525;
+  border-radius: 4px;
+  padding: 3px 7px;
+  flex-shrink: 0;
+}
+
+.step-text {
+  font-size: 13px;
+  color: #ccc;
+  font-weight: 400;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #8a8a8a;
+}
+
+/* ── SKILLS ── */
+#skills {
+  background: #0a0a0a;
+  border-top: 1px solid #161616;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.skill-card {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: border-color 0.2s;
+}
+
+.skill-card:hover { border-color: #333; }
+
+.skill-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ── PROJECTS ── */
+#projects {
+  background: #0a0a0a;
+  border-top: 1px solid #161616;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.project-card {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: border-color 0.2s;
+}
+
+.project-card:hover { border-color: #333; }
+
+.project-card.wide {
+  grid-column: span 2;
+}
+
+.project-number {
+  font-size: 11px;
+  color: #8a8a8a;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.project-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.project-card p {
+  font-size: 13px;
+  color: #9a9a9a;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ── CERTS ── */
+#certs {
+  background: #0a0a0a;
+  border-top: 1px solid #161616;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.cert-card {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 12px;
+  padding: 28px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: border-color 0.2s;
+}
+
+.cert-card:hover { border-color: #333; }
+
+.cert-index {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  flex-shrink: 0;
+  min-width: 40px;
+  letter-spacing: -0.03em;
+}
+
+.cert-info h4 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.cert-info span {
+  font-size: 12px;
+  color: #8a8a8a;
+}
+
+/* ── CONTACT ── */
+#contact {
+  background: #0a0a0a;
+  border-top: 1px solid #161616;
+  text-align: center;
+}
+
+.contact-email {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 20px 0 12px;
+  letter-spacing: -0.02em;
+  transition: color 0.2s;
+}
+
+.contact-email:hover { color: #aaa; }
+
+.contact-phone {
+  font-size: 14px;
+  color: #8a8a8a;
+  margin-bottom: 40px;
+}
+
+.contact-btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: #888;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.contact-btn:hover {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #333;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 24px 48px;
+  border-top: 1px solid #161616;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer span {
+  font-size: 12px;
+  color: #8a8a8a;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 16px 24px; }
+  .nav-pill { display: none; }
+  section { padding: 60px 24px; }
+  #hero { padding: 32px 24px 60px; flex-direction: column; gap: 40px; min-height: auto; }
+  .hero-right { width: 100%; height: 260px; }
+  .hero-photo-bg { width: 200px; height: 280px; }
+  .services-grid, .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .approach-steps { grid-template-columns: 1fr; }
+  .stats-row { gap: 40px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.wide { grid-column: span 1; }
+  .certs-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .services-grid, .skills-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">tc</div>
+
+  <div class="nav-pill">
+    <a href="#hero" class="active">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+  </div>
+
+  <a href="mailto:tshimollochiloane02@gmail.com" class="nav-cta">Let's Talk</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-intro">I am Tshimollo</p>
+    <h1 class="hero-name">Aspiring Data<br />Analyst &amp; Engineer</h1>
+    <p class="hero-desc">
+      Blending analytical thinking with clean, structured data pipelines to 
+      extract insight and build reliable systems that drive real decisions.
+    </p>
+    <a href="Tshimollo_Chiloane_CV.pdf" class="hero-btn" download>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download CV
+    </a>
+    <div class="hero-socials">
+      <a href="https://linkedin.com/in/tshimollo-chiloane" class="social-icon" title="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://github.com/Tshimzaaa" class="social-icon" title="GitHub" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-photo-container">
+      <div class="hero-photo-bg">
+        <img src="photo.jpeg" alt="Tshimollo Chiloane" style="width:100%;height:100%;object-fit:cover;object-position:62% 20%;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header">
+    <h2>What I Do</h2>
+    <p>Turning raw data into clarity and value</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Data Analysis &amp; Reporting</h3>
+      <p>Clean, structured analysis of datasets to surface trends, anomalies, and actionable insights for business decisions.</p>
+      <div class="service-tags">
+        <div class="service-tag">Python &amp; Pandas</div>
+        <div class="service-tag">Excel &amp; SQL</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <h3>Data Engineering &amp; Pipelines</h3>
+      <p>Building reliable ETL pipelines and data infrastructure using modern orchestration and transformation tools.</p>
+      <div class="service-tags">
+        <div class="service-tag">Airflow &amp; dbt</div>
+        <div class="service-tag">Spark &amp; Kafka</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <h3>Database Design &amp; SQL</h3>
+      <p>Designing efficient schemas, writing optimised queries, and managing structured data for analytics and reporting.</p>
+      <div class="service-tags">
+        <div class="service-tag">Schema design</div>
+        <div class="service-tag">Query optimisation</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <h3>Web App Development</h3>
+      <p>Building interactive frontend applications and dashboards with clean UX — making data accessible and visual.</p>
+      <div class="service-tags">
+        <div class="service-tag">React &amp; JavaScript</div>
+        <div class="service-tag">UX &amp; deployment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <h2>About Me</h2>
+  </div>
+  <p class="about-desc">
+    I'm a data professional based in Germiston, Gauteng, passionate about the full data lifecycle — 
+    from ingestion and transformation through to analytics and storytelling. I hold certifications from 
+    Harvard, Cisco, Deloitte, and FNB, and I'm actively building toward data engineering and remote 
+    data roles, combining analytical rigour with modern engineering practices.
+  </p>
+
+  <p class="approach-label">My Approach</p>
+  <div class="approach-steps">
+    <div class="approach-step">
+      <span class="step-num">01</span>
+      <span class="step-text">Understand the data &amp; business goal</span>
+    </div>
+    <div class="approach-step">
+      <span class="step-num">02</span>
+      <span class="step-text">Clean, transform &amp; model with precision</span>
+    </div>
+    <div class="approach-step">
+      <span class="step-num">03</span>
+      <span class="step-text">Deliver clear, actionable insight</span>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">4+</div>
+      <div class="stat-label">Certifications</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Languages Spoken</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <h2>Skills</h2>
+    <p>Technical tools across data and development</p>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Core Languages</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Bash</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Analytics</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Data Analysis</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">Excel</span>
+        <span class="skill-tag">Data Cleaning</span>
+        <span class="skill-tag">EDA</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Data Engineering</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Airflow</span>
+        <span class="skill-tag">Spark</span>
+        <span class="skill-tag">dbt</span>
+        <span class="skill-tag">Kafka</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">Terraform</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Web &amp; Tools</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">HTML/CSS</span>
+        <span class="skill-tag">UX Design</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">REST APIs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <h2>Projects</h2>
+    <p>Selected builds across data, analytics, and web development</p>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card wide">
+      <div class="project-number">PROJECT 01 — FEATURED</div>
+      <h3>Stance Go — Ride-Hailing MVP</h3>
+      <p>
+        A culture-driven ride-hailing platform for Gauteng where every vehicle is a vetted stance or modified car. 
+        Built with React, FastAPI, Leaflet.js maps, OpenStreetMap/OSRM routing, live address autocomplete, 
+        and an itemised pricing engine (base fare + per-km day/night rate + style boost). 
+        Tagline: <em>"Every car a stance build. Every ride, a statement."</em>
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">Leaflet.js</span>
+        <span class="tech-tag">OSRM</span>
+        <span class="tech-tag">Nominatim</span>
+        <span class="tech-tag">Python</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-number">PROJECT 02</div>
+      <h3>Student Management System</h3>
+      <p>
+        A Python OOP-based system for managing student records, grades, and academic data. 
+        Demonstrates clean class design, encapsulation, data persistence, and CRUD operations.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">OOP</span>
+        <span class="tech-tag">File I/O</span>
+        <span class="tech-tag">CRUD</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-number">PROJECT 03</div>
+      <h3>Data Cleaning Projects</h3>
+      <p>
+        Applied data wrangling on real-world messy datasets — handling nulls, type mismatches, 
+        duplicates, outlier detection, and normalisation using Python and Pandas.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag">NumPy</span>
+        <span class="tech-tag">EDA</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-number">PROJECT 04</div>
+      <h3>Deloitte Analytics Simulation</h3>
+      <p>
+        Completed Deloitte's data analytics simulation via Forage — analysing vehicle sales data, 
+        identifying trends, and producing insights for business decision-making.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Excel</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Data Analysis</span>
+        <span class="tech-tag">Reporting</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-number">PROJECT 05</div>
+      <h3>Frontend Web Applications</h3>
+      <p>
+        Built and deployed interactive web apps through the FNB App Academy — covering React 
+        component design, UX principles, responsive layouts, and full deployment workflows.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">UX Design</span>
+        <span class="tech-tag">Deployment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs">
+  <div class="section-header">
+    <h2>Certifications</h2>
+    <p>Verified credentials from globally recognised institutions</p>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <span class="cert-index">01</span>
+      <div class="cert-info">
+        <h4>CS50P — Introduction to Programming with Python</h4>
+        <span>Harvard University</span>
+      </div>
+    </div>
+    <div class="cert-card">
+      <span class="cert-index">02</span>
+      <div class="cert-info">
+        <h4>Data Analytics Essentials</h4>
+        <span>Cisco</span>
+      </div>
+    </div>
+    <div class="cert-card">
+      <span class="cert-index">03</span>
+      <div class="cert-info">
+        <h4>Data Analytics Job Simulation</h4>
+        <span>Deloitte via Forage</span>
+      </div>
+    </div>
+    <div class="cert-card">
+      <span class="cert-index">04</span>
+      <div class="cert-info">
+        <h4>App Academy 2025 — JavaScript, React &amp; UX Design</h4>
+        <span>FNB (FirstRand Bank)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <h2>Get In Touch</h2>
+    <p>Open to data engineering learnerships, analyst roles, and remote opportunities</p>
+  </div>
+  <a href="mailto:tshimollochiloane02@gmail.com" class="contact-email">
+    tshimollochiloane02@gmail.com
+  </a>
+  <p class="contact-phone">081 520 3965 · Germiston, Gauteng, South Africa</p>
+  <div class="contact-btns">
+    <a href="mailto:tshimollochiloane02@gmail.com" class="contact-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      Email Me
+    </a>
+    <a href="tel:0815203965" class="contact-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.18 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+      Call Me
+    </a>
+    <a href="https://linkedin.com/in/tshimollo-chiloane" class="contact-btn" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/Tshimzaaa" class="contact-btn" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Tshimollo Chiloane</span>
+  <span>Germiston, Gauteng · South Africa</span>
+</footer>
+
+<script>
+  // Smooth active nav link
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-pill a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
